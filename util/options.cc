@@ -24,7 +24,11 @@ Options::Options()
       max_file_size(2<<20),
       compression(kSnappyCompression),
       reuse_logs(false),
-      filter_policy(nullptr) {
+      filter_policy(nullptr),
+      T(10.0),
+      K(3),
+      Z(2) {
+      write_buffer_size = 1024576.0 * T / K;  
 }
 
 }  // namespace leveldb
